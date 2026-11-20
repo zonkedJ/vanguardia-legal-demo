@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abogados Bucaramanga | Vanguardia Legal & Asociados</title>
+  <meta name="description" content="Asesoría jurídica para empresas y personas en Bucaramanga y su área metropolitana. Derecho comercial, laboral, contratos y resolución de conflictos." />
+  
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            navy: {
+              950: '#070D1F',
+              900: '#0B132B',
+              800: '#131E3A',
+              700: '#1C2B4F',
+            },
+            ivory: {
+              50: '#FAF8F5',
+              100: '#F3EFEA',
+              200: '#E6DFD5',
+            },
+            gold: {
+              400: '#FBBF24',
+              500: '#F59E0B',
+              600: '#D97706',
+              700: '#B45309',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans antialiased bg-ivory-50 text-slate-800 dark:bg-navy-900 dark:text-slate-100 transition-colors duration-300 selection:bg-gold-600 selection:text-white">
+
+  <!-- =========================================================
+       NAVBAR FIJO CON LOGO SVG, NAVEGACIÓN Y SELECTOR CLARO/OSCURO
+       ========================================================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-ivory-50/90 dark:bg-navy-900/90 border-b border-ivory-200 dark:border-navy-700/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo Original SVG -->
+        <a href="#inicio" class="flex items-center gap-3 group focus:outline-none" aria-label="Inicio Vanguardia Legal & Asociados">
+          <div class="w-11 h-11 rounded-xl bg-navy-900 dark:bg-navy-800 border border-gold-600/50 flex items-center justify-center shadow-md group-hover:border-gold-500 transition-all">
+            <svg class="w-7 h-7 text-gold-500" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Escudo y balanza geométrica estilizada -->
+              <path d="M18 3L6 8.2V17.4C6 25.1 11.1 32.1 18 34C24.9 32.1 30 25.1 30 17.4V8.2L18 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M18 9V26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M11 14H25" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M11 14L8.5 20H13.5L11 14Z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M25 14L22.5 20H27.5L25 14Z" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M14.5 26H21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif font-bold text-lg sm:text-xl tracking-tight text-navy-900 dark:text-white leading-none">
+              Vanguardia Legal
+            </span>
+            <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-400 mt-1">
+              &amp; Asociados
+            </span>
+          </div>
+        </a>
+
+        <!-- Enlaces Desktop -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-700 dark:text-slate-300">
+          <a href="#inicio" class="hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Inicio</a>
+          <a href="#areas" class="hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Áreas de Práctica</a>
+          <a href="#metodologia" class="hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Metodología</a>
+          <a href="#cobertura" class="hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Cobertura</a>
+          <a href="#faq" class="hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Preguntas Frecuentes</a>
+          <a href="#contacto" class="hover:text-gold-700 dark:hover:text-gold-400 transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Acciones: Toggle Tema + CTA + Menú Móvil -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button id="theme-toggle" type="button" class="p-2.5 rounded-xl border border-ivory-200 dark:border-navy-700 bg-white dark:bg-navy-800 text-navy-900 dark:text-gold-400 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm transition-all flex items-center gap-2 text-xs font-semibold" aria-label="Cambiar tema claro u oscuro">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+            <span class="hidden sm:inline dark:hidden">Modo Oscuro</span>
+            <span class="hidden dark:sm:inline">Modo Claro</span>
+          </button>
+
+          <a href="#contacto" class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gold-700 hover:bg-gold-600 dark:bg-gold-600 dark:hover:bg-gold-500 text-white font-semibold text-sm shadow-md shadow-gold-700/20 transition-all">
+            <span>Solicitar una consulta</span>
+          </a>
+
+          <button id="mobile-menu-btn" type="button" class="lg:hidden p-2.5 rounded-xl border border-ivory-200 dark:border-navy-700 bg-white dark:bg-navy-800 text-slate-800 dark:text-slate-200" aria-label="Abrir menú de navegación">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-ivory-200 dark:border-navy-700 bg-ivory-50 dark:bg-navy-900 px-4 pt-3 pb-5 space-y-2">
+      <a href="#inicio" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-ivory-100 dark:hover:bg-navy-800">Inicio</a>
+      <a href="#areas" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-ivory-100 dark:hover:bg-navy-800">Áreas de Práctica</a>
+      <a href="#metodologia" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-ivory-100 dark:hover:bg-navy-800">Metodología</a>
+      <a href="#cobertura" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-ivory-100 dark:hover:bg-navy-800">Cobertura</a>
+      <a href="#faq" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-ivory-100 dark:hover:bg-navy-800">Preguntas Frecuentes</a>
+      <a href="#contacto" class="mobile-link block px-3 py-2.5 rounded-lg text-sm font-semibold text-gold-700 dark:text-gold-400">Solicitar una consulta</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================
+         1. PORTADA — HERO SECTION
+         ========================================================= -->
+    <section id="inicio" class="relative overflow-hidden py-14 sm:py-20 lg:py-24 border-b border-ivory-200 dark:border-navy-800">
+      <!-- Decoración sutil de fondo -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-navy-700/10 dark:bg-gold-600/5 blur-3xl"></div>
+      </div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Columna de Contenido -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/30 text-gold-700 dark:text-gold-400 text-xs font-semibold tracking-wide">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+              <span>Bucaramanga y Área Metropolitana · Proyecto Demostrativo</span>
+            </div>
+
+            <h1 class="font-serif text-3xl sm:text-5xl lg:text-[3.25rem] font-bold tracking-tight text-navy-900 dark:text-white leading-[1.15]">
+              Abogados en Bucaramanga para <span class="text-gold-700 dark:text-gold-400">empresas y personas</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">
+              En <strong class="font-semibold text-navy-900 dark:text-white">Vanguardia Legal &amp; Asociados</strong> le ayudamos a tomar decisiones jurídicas informadas, prevenir riesgos y afrontar conflictos. Acompañamos a empresas, emprendedores y personas con un lenguaje claro, análisis de cada caso y una ruta de trabajo definida.
+            </p>
+
+            <div class="p-4 rounded-xl bg-white dark:bg-navy-800/90 border-l-4 border-gold-600 dark:border-gold-500 shadow-sm">
+              <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+                Desde Bucaramanga, atendemos asuntos de clientes de <strong class="text-navy-900 dark:text-white">Floridablanca, Girón y Piedecuesta</strong>, con enfoque en las necesidades de su negocio y la protección de sus derechos.
+              </p>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+              <a href="#contacto" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gold-700 hover:bg-gold-600 dark:bg-gold-600 dark:hover:bg-gold-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-gold-700/25 transition-all">
+                <span>Solicitar una consulta</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a href="#areas" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-navy-800 text-navy-900 dark:text-white border border-slate-300 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 font-semibold text-sm sm:text-base transition-all">
+                <span>Conocer nuestras áreas de práctica</span>
+              </a>
+            </div>
+
+            <!-- Microtexto -->
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 flex items-start gap-2 pt-1">
+              <i data-lucide="info" class="w-4 h-4 text-gold-700 dark:text-gold-400 shrink-0 mt-0.5"></i>
+              <span>La consulta permite revisar su situación y definir el alcance del acompañamiento, los honorarios y los pasos siguientes.</span>
+            </p>
+          </div>
+
+          <!-- Columna Visual (Fotografía libre de derechos + Tarjeta flotante + Fallback SVG) -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-gold-600/30 dark:border-gold-500/30 shadow-2xl bg-navy-800">
+              <img 
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=80" 
+                alt="Balanza de la justicia y libros jurídicos sobre escritorio corporativo" 
+                class="w-full h-[360px] sm:h-[440px] object-cover object-center"
+                onerror="this.style.display='none'; document.getElementById('hero-fallback-svg').classList.remove('hidden');"
+              />
+              <!-- Respaldo SVG elegante en caso de fallo de red -->
+              <div id="hero-fallback-svg" class="hidden w-full h-[360px] sm:h-[440px] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 flex flex-col items-center justify-center p-8 text-center">
+                <svg class="w-24 h-24 text-gold-500 mb-4" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M32 6L10 15.5V31.5C10 45.2 19.3 57.6 32 61C44.7 57.6 54 45.2 54 31.5V15.5L32 6Z" stroke="currentColor" stroke-width="2.5"/>
+                  <path d="M32 16V46M20 24H44M20 24L15 35H25L20 24ZM44 24L39 35H49L44 24ZM25 46H39" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="font-serif text-xl text-white font-semibold">Vanguardia Legal &amp; Asociados</p>
+                <p class="text-xs text-gold-400 uppercase tracking-widest mt-1">Bucaramanga · Santander</p>
+              </div>
+
+              <!-- Degradado y tarjeta inferior sobre imagen -->
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-900/25 to-transparent pointer-events-none"></div>
+              
+              <div class="absolute bottom-4 left-4 right-4 p-4 sm:p-5 rounded-xl bg-navy-900/90 backdrop-blur-md border border-gold-500/30 text-white">
+                <div class="flex items-center justify-between gap-4">
+                  <div>
+                    <p class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Criterio y Claridad Jurídica</p>
+                    <p class="font-serif text-base sm:text-lg font-semibold mt-0.5">Prevención de riesgos y defensa técnica</p>
+                  </div>
+                  <div class="w-10 h-10 rounded-lg bg-gold-600/20 border border-gold-500/40 flex items-center justify-center shrink-0">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-gold-400"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         2. ÁREAS DE PRÁCTICA (6 TARJETAS INTERACTIVAS)
+         ========================================================= -->
+    <section id="areas" class="py-16 sm:py-24 bg-ivory-100/70 dark:bg-navy-950/50 border-b border-ivory-200 dark:border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-12 sm:mb-16">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-400">Áreas de Práctica</span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy-900 dark:text-white mt-2">
+            Asesoría legal para su empresa y sus asuntos personales
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-3 text-base sm:text-lg">
+            Atención estructurada en seis líneas clave del derecho empresarial, contractual y preventivo en Colombia.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          
+          <!-- Tarjeta 1 -->
+          <article class="group rounded-2xl p-6 sm:p-7 bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/25 flex items-center justify-center text-gold-700 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-colors">
+                <i data-lucide="building-2" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-navy-900 dark:text-white mt-5 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                Derecho corporativo y societario
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Acompañamos la constitución de sociedades, la revisión de estatutos, las reformas y los acuerdos entre accionistas. Le ayudamos a organizar las reglas de su empresa y a definir responsabilidades para tomar decisiones con mayor claridad.
+              </p>
+            </div>
+            <div class="pt-5 mt-5 border-t border-ivory-200 dark:border-navy-700/70">
+              <a href="#contacto" data-area="Derecho corporativo y societario" class="area-select-link inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 dark:text-gold-400 hover:underline">
+                <span>Consultar sobre esta área</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 -->
+          <article class="group rounded-2xl p-6 sm:p-7 bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/25 flex items-center justify-center text-gold-700 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-colors">
+                <i data-lucide="briefcase" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-navy-900 dark:text-white mt-5 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                Derecho comercial
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Asesoramos a comerciantes y empresas en sus relaciones con clientes, proveedores y aliados. Revisamos las obligaciones y los riesgos jurídicos de sus operaciones para apoyar decisiones coherentes con su actividad económica.
+              </p>
+            </div>
+            <div class="pt-5 mt-5 border-t border-ivory-200 dark:border-navy-700/70">
+              <a href="#contacto" data-area="Derecho comercial" class="area-select-link inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 dark:text-gold-400 hover:underline">
+                <span>Consultar sobre esta área</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="group rounded-2xl p-6 sm:p-7 bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/25 flex items-center justify-center text-gold-700 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-colors">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-navy-900 dark:text-white mt-5 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                Derecho laboral
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Orientamos a empleadores y trabajadores en contratación, ejecución y terminación de relaciones laborales. Revisamos documentos y circunstancias de cada caso para identificar obligaciones, riesgos y alternativas de actuación.
+              </p>
+            </div>
+            <div class="pt-5 mt-5 border-t border-ivory-200 dark:border-navy-700/70">
+              <a href="#contacto" data-area="Derecho laboral" class="area-select-link inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 dark:text-gold-400 hover:underline">
+                <span>Consultar sobre esta área</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4 -->
+          <article class="group rounded-2xl p-6 sm:p-7 bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/25 flex items-center justify-center text-gold-700 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-colors">
+                <i data-lucide="file-signature" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-navy-900 dark:text-white mt-5 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                Contratos civiles y comerciales
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Redactamos y revisamos contratos de prestación de servicios, suministro, compraventa y arrendamiento, entre otros. Definimos con claridad obligaciones, pagos, garantías y mecanismos para manejar posibles incumplimientos.
+              </p>
+            </div>
+            <div class="pt-5 mt-5 border-t border-ivory-200 dark:border-navy-700/70">
+              <a href="#contacto" data-area="Contratos civiles y comerciales" class="area-select-link inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 dark:text-gold-400 hover:underline">
+                <span>Consultar sobre esta área</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 5 -->
+          <article class="group rounded-2xl p-6 sm:p-7 bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/25 flex items-center justify-center text-gold-700 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-colors">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-navy-900 dark:text-white mt-5 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                Propiedad intelectual
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Asesoramos en antecedentes marcarios, solicitudes de registro ante la SIC y acuerdos de licencia o cesión de derechos. Revisamos qué mecanismo de protección corresponde a su marca, obra o activo intangible y explicamos el alcance del trámite.
+              </p>
+            </div>
+            <div class="pt-5 mt-5 border-t border-ivory-200 dark:border-navy-700/70">
+              <a href="#contacto" data-area="Propiedad intelectual" class="area-select-link inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 dark:text-gold-400 hover:underline">
+                <span>Consultar sobre esta área</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 6 -->
+          <article class="group rounded-2xl p-6 sm:p-7 bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 hover:border-gold-600 dark:hover:border-gold-500 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 border border-gold-600/25 flex items-center justify-center text-gold-700 dark:text-gold-400 group-hover:bg-gold-600 group-hover:text-white transition-colors">
+                <i data-lucide="scale" class="w-6 h-6"></i>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-navy-900 dark:text-white mt-5 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                Resolución de conflictos y litigios
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+                Analizamos controversias civiles, comerciales y laborales para definir una estrategia acorde con el caso. Lo acompañamos en negociaciones, conciliaciones y procesos judiciales, según la viabilidad y el alcance del servicio contratado.
+              </p>
+            </div>
+            <div class="pt-5 mt-5 border-t border-ivory-200 dark:border-navy-700/70">
+              <a href="#contacto" data-area="Resolución de conflictos y litigios" class="area-select-link inline-flex items-center gap-1.5 text-sm font-semibold text-gold-700 dark:text-gold-400 hover:underline">
+                <span>Consultar sobre esta área</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         3. METODOLOGÍA Y PRINCIPIOS DE TRABAJO
+         ========================================================= -->
+    <section id="metodologia" class="py-16 sm:py-24 border-b border-ivory-200 dark:border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Columna Izquierda: Explicación y Fotografía -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-400">Nuestra Metodología</span>
+            <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy-900 dark:text-white leading-tight">
+              Acompañamiento jurídico con ética y procesos claros
+            </h2>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-base">
+              En Vanguardia Legal &amp; Asociados entendemos que una decisión jurídica puede afectar la operación de una empresa, una relación de trabajo o el patrimonio de una persona. Por eso, nuestro punto de partida es escuchar, revisar la información disponible y explicar las alternativas con sus riesgos y limitaciones.
+            </p>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-base">
+              Nuestra metodología se basa en el manejo reservado de la información, la comunicación comprensible y la definición previa del alcance del servicio. <strong class="text-navy-900 dark:text-white font-semibold">No prometemos resultados:</strong> trabajamos para que usted conozca sus opciones y pueda decidir con mejores elementos de juicio.
+            </p>
+
+            <!-- Fotografía libre de derechos contextualizada -->
+            <div class="rounded-2xl overflow-hidden border border-ivory-200 dark:border-navy-700 shadow-lg bg-navy-800 mt-4">
+              <img 
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80" 
+                alt="Revisión detallada de contratos y documentos empresariales" 
+                class="w-full h-60 object-cover"
+                onerror="this.style.display='none'; document.getElementById('method-fallback-svg').classList.remove('hidden');"
+              />
+              <div id="method-fallback-svg" class="hidden w-full h-60 bg-navy-800 flex flex-col items-center justify-center p-6 text-center">
+                <i data-lucide="file-check-2" class="w-12 h-12 text-gold-400 mb-2"></i>
+                <p class="font-serif text-white text-base">Análisis Documental y Prevención</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: 4 Pasos Numerados -->
+          <div class="lg:col-span-7">
+            <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 shadow-lg">
+              <h3 class="font-serif text-xl sm:text-2xl font-bold text-navy-900 dark:text-white mb-6 flex items-center gap-3">
+                <span class="w-8 h-1 bg-gold-600 rounded-full"></span>
+                <span>Así abordamos su asunto</span>
+              </h3>
+
+              <div class="space-y-6">
+                <!-- Paso 1 -->
+                <div class="flex gap-4 sm:gap-5 p-4 rounded-xl bg-ivory-50 dark:bg-navy-900/70 border border-ivory-200/80 dark:border-navy-700/80">
+                  <div class="w-10 h-10 rounded-xl bg-gold-700 dark:bg-gold-600 text-white font-serif font-bold text-lg flex items-center justify-center shrink-0 shadow-sm">
+                    1
+                  </div>
+                  <div>
+                    <h4 class="font-serif text-lg font-bold text-navy-900 dark:text-white">Escuchamos y revisamos.</h4>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                      Conocemos los hechos, identificamos los documentos relevantes y revisamos los plazos que puedan requerir atención.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="flex gap-4 sm:gap-5 p-4 rounded-xl bg-ivory-50 dark:bg-navy-900/70 border border-ivory-200/80 dark:border-navy-700/80">
+                  <div class="w-10 h-10 rounded-xl bg-gold-700 dark:bg-gold-600 text-white font-serif font-bold text-lg flex items-center justify-center shrink-0 shadow-sm">
+                    2
+                  </div>
+                  <div>
+                    <h4 class="font-serif text-lg font-bold text-navy-900 dark:text-white">Explicamos las alternativas.</h4>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                      Presentamos las opciones disponibles, los riesgos identificados y la información que todavía haga falta.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="flex gap-4 sm:gap-5 p-4 rounded-xl bg-ivory-50 dark:bg-navy-900/70 border border-ivory-200/80 dark:border-navy-700/80">
+                  <div class="w-10 h-10 rounded-xl bg-gold-700 dark:bg-gold-600 text-white font-serif font-bold text-lg flex items-center justify-center shrink-0 shadow-sm">
+                    3
+                  </div>
+                  <div>
+                    <h4 class="font-serif text-lg font-bold text-navy-900 dark:text-white">Acordamos el servicio.</h4>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                      Definimos por escrito el alcance, los honorarios, los gastos previstos y las responsabilidades de las partes.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="flex gap-4 sm:gap-5 p-4 rounded-xl bg-ivory-50 dark:bg-navy-900/70 border border-ivory-200/80 dark:border-navy-700/80">
+                  <div class="w-10 h-10 rounded-xl bg-gold-700 dark:bg-gold-600 text-white font-serif font-bold text-lg flex items-center justify-center shrink-0 shadow-sm">
+                    4
+                  </div>
+                  <div>
+                    <h4 class="font-serif text-lg font-bold text-navy-900 dark:text-white">Acompañamos y comunicamos.</h4>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                      Ejecutamos las actuaciones acordadas e informamos los avances y las decisiones que requieren su participación.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. COBERTURA LOCAL (BUCARAMANGA Y ÁREA METROPOLITANA)
+         ========================================================= -->
+    <section id="cobertura" class="py-16 sm:py-20 bg-navy-900 text-white relative overflow-hidden border-b border-navy-800">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(217,119,6,0.16),_transparent_55%)] pointer-events-none"></div>
+      
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center space-y-4">
+          <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.2em] text-gold-400">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+            <span>Santander · Colombia</span>
+          </span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold text-white">
+            Atención en Bucaramanga y su área metropolitana
+          </h2>
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+            Nuestra sede se encuentra en Bucaramanga, Santander. Acompañamos a empresas y personas de Floridablanca, Girón y Piedecuesta en asuntos corporativos, comerciales, laborales, contractuales y de propiedad intelectual, así como en la prevención y resolución de conflictos.
+          </p>
+          <p class="text-sm text-gold-300/90">
+            Al coordinar su consulta, confirmaremos la modalidad de atención y los documentos necesarios para revisar su caso.
+          </p>
+        </div>
+
+        <!-- 4 Insignias Interactivas de Municipios -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-10">
+          <div class="p-5 rounded-2xl bg-navy-800/90 border border-gold-500/40 hover:border-gold-400 transition-all text-center group">
+            <div class="w-10 h-10 mx-auto rounded-full bg-gold-500/15 text-gold-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <i data-lucide="building" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-white">Bucaramanga</h3>
+            <p class="text-xs text-slate-400 mt-1">Sede principal · Sector Cabecera</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-navy-800/90 border border-navy-700 hover:border-gold-400 transition-all text-center group">
+            <div class="w-10 h-10 mx-auto rounded-full bg-gold-500/15 text-gold-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-white">Floridablanca</h3>
+            <p class="text-xs text-slate-400 mt-1">Atención presencial y virtual</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-navy-800/90 border border-navy-700 hover:border-gold-400 transition-all text-center group">
+            <div class="w-10 h-10 mx-auto rounded-full bg-gold-500/15 text-gold-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-white">Girón</h3>
+            <p class="text-xs text-slate-400 mt-1">Zona industrial y empresarial</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-navy-800/90 border border-navy-700 hover:border-gold-400 transition-all text-center group">
+            <div class="w-10 h-10 mx-auto rounded-full bg-gold-500/15 text-gold-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+              <i data-lucide="map-pin" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-lg font-bold text-white">Piedecuesta</h3>
+            <p class="text-xs text-slate-400 mt-1">Empresas, comercios y personas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. PREGUNTAS FRECUENTES (ACORDEÓN INTERACTIVO)
+         ========================================================= -->
+    <section id="faq" class="py-16 sm:py-24 bg-ivory-100/70 dark:bg-navy-950/50 border-b border-ivory-200 dark:border-navy-800">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-400">Orientación Inicial</span>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy-900 dark:text-white mt-2">
+            Preguntas frecuentes sobre nuestros servicios jurídicos
+          </h2>
+        </div>
+
+        <div class="space-y-4" id="faq-container">
+          
+          <!-- Pregunta 1 -->
+          <div class="faq-item rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 overflow-hidden shadow-sm">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-lg font-bold text-navy-900 dark:text-white hover:text-gold-700 dark:hover:text-gold-400 transition-colors" aria-expanded="true">
+              <span>¿Cuánto cuesta una consulta jurídica en Bucaramanga?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gold-700 dark:text-gold-400 shrink-0 transition-transform duration-300 rotate-180"></i>
+            </button>
+            <div class="faq-content px-6 pb-5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-ivory-100 dark:border-navy-700/60 pt-3">
+              El valor depende del tema, la documentación que deba revisarse y el alcance de la orientación solicitada. Antes de agendar, le informaremos el costo de la consulta y qué incluye. Si necesita un trámite o representación, recibirá una propuesta independiente con los honorarios y gastos previstos.
+            </div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="faq-item rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 overflow-hidden shadow-sm">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-lg font-bold text-navy-900 dark:text-white hover:text-gold-700 dark:hover:text-gold-400 transition-colors" aria-expanded="false">
+              <span>¿Qué documentos debo presentar para la primera consulta?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gold-700 dark:text-gold-400 shrink-0 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-ivory-100 dark:border-navy-700/60 pt-3">
+              Para iniciar, prepare un resumen de lo ocurrido, las fechas importantes y los documentos relacionados con su asunto: contratos, comunicaciones, comprobantes de pago, certificados empresariales o notificaciones, según corresponda. Al coordinar la cita le indicaremos qué información necesitamos y cómo entregarla. Informe desde el primer contacto si tiene una audiencia, una notificación o un plazo próximo.
+            </div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="faq-item rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 overflow-hidden shadow-sm">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-lg font-bold text-navy-900 dark:text-white hover:text-gold-700 dark:hover:text-gold-400 transition-colors" aria-expanded="false">
+              <span>¿Registrar mi empresa en la Cámara de Comercio también protege mi marca?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gold-700 dark:text-gold-400 shrink-0 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-ivory-100 dark:border-navy-700/60 pt-3">
+              No son trámites equivalentes. La matrícula y el registro mercantil cumplen funciones relacionadas con la publicidad de la actividad comercial y de los actos sujetos a inscripción; no sustituyen el registro de una marca ante la Superintendencia de Industria y Comercio. Si busca proteger el signo que distingue sus productos o servicios, debe revisar la viabilidad del registro marcario correspondiente.
+            </div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="faq-item rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 overflow-hidden shadow-sm">
+            <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-lg font-bold text-navy-900 dark:text-white hover:text-gold-700 dark:hover:text-gold-400 transition-colors" aria-expanded="false">
+              <span>¿Siempre debo intentar una conciliación antes de demandar?</span>
+              <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-gold-700 dark:text-gold-400 shrink-0 transition-transform duration-300"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-ivory-100 dark:border-navy-700/60 pt-3">
+              No. Depende del asunto, del proceso y de las excepciones legales aplicables. En determinados procesos declarativos civiles y comerciales, la conciliación extrajudicial en derecho es un requisito previo, pero no debe asumirse que lo sea para cualquier demanda. Antes de iniciar una actuación, revisamos si corresponde acudir a conciliación y qué documentos se requieren.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. CONTACTO Y FORMULARIO CON VALIDACIÓN
+         ========================================================= -->
+    <section id="contacto" class="py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- Información de Contacto -->
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-700 dark:text-gold-400">Contacto</span>
+            <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy-900 dark:text-white">
+              Cuéntenos qué necesita resolver
+            </h2>
+            <p class="text-slate-700 dark:text-slate-300 text-base leading-relaxed">
+              Cuéntenos su situación. Revisaremos la información inicial para definir si podemos acompañarlo y cuál sería el alcance del servicio.
+            </p>
+
+            <div class="space-y-4 pt-2">
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 shadow-sm">
+                <div class="w-10 h-10 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 text-gold-700 dark:text-gold-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="map-pin" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-navy-900 dark:text-white text-sm">Ubicación de referencia</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-300 mt-0.5">Sector Cabecera del Llano, Bucaramanga, Santander, Colombia</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 shadow-sm">
+                <div class="w-10 h-10 rounded-xl bg-gold-600/10 dark:bg-gold-500/15 text-gold-700 dark:text-gold-400 flex items-center justify-center shrink-0">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-navy-900 dark:text-white text-sm">Modalidad de atención</h3>
+                  <p class="text-sm text-slate-600 dark:text-slate-300 mt-0.5">Presencial en Bucaramanga y virtual para todo el área metropolitana (previa cita).</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 p-4 rounded-2xl bg-amber-50 dark:bg-gold-500/10 border border-gold-600/30">
+                <i data-lucide="shield-alert" class="w-5 h-5 text-gold-700 dark:text-gold-400 shrink-0 mt-0.5"></i>
+                <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <strong>Aviso importante:</strong> El envío de este formulario tiene fines de contacto preliminar dentro de este sitio web demostrativo y no constituye por sí solo una relación abogado-cliente ni asesoría jurídica vinculante.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <div class="lg:col-span-7">
+            <div class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 shadow-xl">
+              <form id="contact-form" class="space-y-5" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="nombre" class="block text-sm font-semibold text-navy-900 dark:text-slate-200 mb-1.5">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Camilo Andrés Rodríguez" class="w-full px-4 py-3 rounded-xl bg-ivory-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 text-navy-900 dark:text-white focus:outline-none focus:border-gold-600 dark:focus:border-gold-500 text-sm transition-colors" />
+                  </div>
+                  <div>
+                    <label for="empresa" class="block text-sm font-semibold text-navy-900 dark:text-slate-200 mb-1.5">Empresa <span class="font-normal text-slate-500">(opcional)</span></label>
+                    <input type="text" id="empresa" name="empresa" placeholder="Ej. Inversiones Santander S.A.S." class="w-full px-4 py-3 rounded-xl bg-ivory-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 text-navy-900 dark:text-white focus:outline-none focus:border-gold-600 dark:focus:border-gold-500 text-sm transition-colors" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label for="correo" class="block text-sm font-semibold text-navy-900 dark:text-slate-200 mb-1.5">Correo electrónico *</label>
+                    <input type="email" id="correo" name="correo" required placeholder="correo@ejemplo.com" class="w-full px-4 py-3 rounded-xl bg-ivory-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 text-navy-900 dark:text-white focus:outline-none focus:border-gold-600 dark:focus:border-gold-500 text-sm transition-colors" />
+                  </div>
+                  <div>
+                    <label for="municipio" class="block text-sm font-semibold text-navy-900 dark:text-slate-200 mb-1.5">Municipio *</label>
+                    <select id="municipio" name="municipio" required class="w-full px-4 py-3 rounded-xl bg-ivory-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 text-navy-900 dark:text-white focus:outline-none focus:border-gold-600 dark:focus:border-gold-500 text-sm transition-colors">
+                      <option value="Bucaramanga">Bucaramanga</option>
+                      <option value="Floridablanca">Floridablanca</option>
+                      <option value="Girón">Girón</option>
+                      <option value="Piedecuesta">Piedecuesta</option>
+                      <option value="Otro">Otro municipio de Colombia</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="area" class="block text-sm font-semibold text-navy-900 dark:text-slate-200 mb-1.5">Área de consulta *</label>
+                  <select id="area" name="area" required class="w-full px-4 py-3 rounded-xl bg-ivory-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 text-navy-900 dark:text-white focus:outline-none focus:border-gold-600 dark:focus:border-gold-500 text-sm transition-colors">
+                    <option value="">Seleccione un área de práctica...</option>
+                    <option value="Derecho corporativo y societario">Derecho corporativo y societario</option>
+                    <option value="Derecho comercial">Derecho comercial</option>
+                    <option value="Derecho laboral">Derecho laboral</option>
+                    <option value="Contratos civiles y comerciales">Contratos civiles y comerciales</option>
+                    <option value="Propiedad intelectual">Propiedad intelectual</option>
+                    <option value="Resolución de conflictos y litigios">Resolución de conflictos y litigios</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="mensaje" class="block text-sm font-semibold text-navy-900 dark:text-slate-200 mb-1.5">Breve descripción del caso *</label>
+                  <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Describa brevemente su consulta, si existen documentos por revisar o plazos próximos..." class="w-full px-4 py-3 rounded-xl bg-ivory-50 dark:bg-navy-900 border border-slate-300 dark:border-navy-700 text-navy-900 dark:text-white focus:outline-none focus:border-gold-600 dark:focus:border-gold-500 text-sm transition-colors"></textarea>
+                </div>
+
+                <!-- Casilla Ley 1581 de 2012 -->
+                <div class="flex items-start gap-3">
+                  <input type="checkbox" id="habeas-data" name="habeas-data" required class="mt-1 w-4 h-4 rounded border-slate-300 text-gold-600 focus:ring-gold-500" />
+                  <label for="habeas-data" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Autorizo el tratamiento de mis datos personales conforme a la <strong>Ley 1581 de 2012</strong> (Colombia) y la <button type="button" data-legal="datos" class="legal-modal-btn underline font-semibold text-gold-700 dark:text-gold-400">Política de Tratamiento de Datos Personales</button> para gestionar esta solicitud de contacto. *
+                  </label>
+                </div>
+
+                <!-- Mensaje de Error / Validación -->
+                <div id="form-error" class="hidden p-3.5 rounded-xl bg-red-500/10 border border-red-500/40 text-red-700 dark:text-red-300 text-xs sm:text-sm flex items-center gap-2">
+                  <i data-lucide="alert-circle" class="w-4 h-4 shrink-0"></i>
+                  <span id="form-error-text">Por favor complete todos los campos obligatorios marcados con *.</span>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gold-700 hover:bg-gold-600 dark:bg-gold-600 dark:hover:bg-gold-500 text-white font-semibold text-sm sm:text-base shadow-lg shadow-gold-700/20 transition-all flex items-center justify-center gap-2">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Enviar solicitud de consulta</span>
+                </button>
+              </form>
+
+              <!-- Confirmación elegante tras enviar -->
+              <div id="form-success" class="hidden py-8 text-center space-y-4">
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                  <i data-lucide="check-circle-2" class="w-9 h-9"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-navy-900 dark:text-white">Solicitud recibida correctamente</h3>
+                <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed">
+                  Gracias por escribirnos, <span id="confirm-name" class="font-semibold text-navy-900 dark:text-white"></span>. En un entorno real, nuestro equipo revisaría su consulta sobre <span id="confirm-area" class="font-semibold text-gold-700 dark:text-gold-400"></span> para indicarle la modalidad de atención y los pasos siguientes.
+                </p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">
+                  (Simulación interactiva de demostración — no se han enviado datos a servidores externos).
+                </p>
+                <button type="button" id="reset-form-btn" class="mt-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 dark:border-navy-600 text-sm font-semibold hover:border-gold-500 transition-colors">
+                  <span>Realizar otra consulta de prueba</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER CON LOGO SVG, ENLACES LEGALES Y NOTA DE DEMOSTRACIÓN
+       ========================================================= -->
+  <footer class="bg-navy-950 text-slate-300 border-t border-navy-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-navy-800">
+        
+        <!-- Marca -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-navy-900 border border-gold-500/50 flex items-center justify-center">
+              <svg class="w-6 h-6 text-gold-400" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 3L6 8.2V17.4C6 25.1 11.1 32.1 18 34C24.9 32.1 30 25.1 30 17.4V8.2L18 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M18 9V26M11 14H25M11 14L8.5 20H13.5L11 14ZM25 14L22.5 20H27.5L25 14ZM14.5 26H21.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="font-serif font-bold text-lg text-white leading-none">Vanguardia Legal</p>
+              <p class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-400 mt-1">&amp; Asociados</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
+            Asesoría jurídica preventiva y representación para empresas, emprendedores y personas en Bucaramanga, Floridablanca, Girón y Piedecuesta.
+          </p>
+        </div>
+
+        <!-- Enlaces Rápidos -->
+        <div class="md:col-span-3 space-y-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-white">Navegación</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="#inicio" class="hover:text-gold-400 transition-colors">Inicio</a></li>
+            <li><a href="#areas" class="hover:text-gold-400 transition-colors">Áreas de Práctica</a></li>
+            <li><a href="#metodologia" class="hover:text-gold-400 transition-colors">Metodología</a></li>
+            <li><a href="#cobertura" class="hover:text-gold-400 transition-colors">Cobertura Metropolitana</a></li>
+            <li><a href="#faq" class="hover:text-gold-400 transition-colors">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Enlaces Legales (Modales interactivos) -->
+        <div class="md:col-span-4 space-y-3">
+          <h3 class="text-xs font-bold uppercase tracking-wider text-white">Información Legal (Colombia)</h3>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li>
+              <button type="button" data-legal="aviso" class="legal-modal-btn hover:text-gold-400 transition-colors text-left">
+                Aviso Legal y Alcance Informativo
+              </button>
+            </li>
+            <li>
+              <button type="button" data-legal="datos" class="legal-modal-btn hover:text-gold-400 transition-colors text-left">
+                Política de Tratamiento de Datos (Ley 1581 de 2012)
+              </button>
+            </li>
+            <li>
+              <button type="button" data-legal="privacidad" class="legal-modal-btn hover:text-gold-400 transition-colors text-left">
+                Política de Privacidad y Confidencialidad
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pie inferior y nota de demostración -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <p>© 2026 Vanguardia Legal &amp; Asociados · Bucaramanga, Santander, Colombia.</p>
+        <p class="px-3 py-1.5 rounded-lg bg-navy-900 border border-navy-800 text-gold-400/90 text-center">
+          Proyecto de diseño y desarrollo web demostrativo para portafolio profesional.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       MODAL PARA TEXTOS LEGALES (SIN SALIR DE LA PÁGINA)
+       ========================================================= -->
+  <div id="legal-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm">
+    <div class="w-full max-w-xl rounded-2xl bg-white dark:bg-navy-800 border border-ivory-200 dark:border-navy-700 shadow-2xl overflow-hidden">
+      <div class="px-6 py-4 border-b border-ivory-200 dark:border-navy-700 flex items-center justify-between">
+        <h3 id="legal-modal-title" class="font-serif text-xl font-bold text-navy-900 dark:text-white">Información Legal</h3>
+        <button type="button" id="close-legal-modal" class="p-1.5 rounded-lg text-slate-500 hover:text-navy-900 dark:hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="legal-modal-body" class="p-6 text-sm text-slate-600 dark:text-slate-300 space-y-3 leading-relaxed max-h-[65vh] overflow-y-auto">
+      </div>
+      <div class="px-6 py-4 bg-ivory-50 dark:bg-navy-900/60 border-t border-ivory-200 dark:border-navy-700 flex justify-end">
+        <button type="button" id="confirm-legal-modal" class="px-5 py-2 rounded-xl bg-gold-700 hover:bg-gold-600 text-white text-sm font-semibold">
+          Entendido
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       JAVASCRIPT: ICONOS, TEMA CLARO/OSCURO, ACORDEÓN, FORM Y MODAL
+       ========================================================= -->
+  <script>
+    // 1. Inicializar íconos de Lucide
+    lucide.createIcons();
+
+    // 2. Selector de Tema Claro / Oscuro
+    const htmlEl = document.documentElement;
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    themeToggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+    });
+
+    // 3. Menú Móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 4. Autoseleccionar área de práctica al hacer clic en una tarjeta
+    const areaSelect = document.getElementById('area');
+    document.querySelectorAll('.area-select-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const selectedArea = link.getAttribute('data-area');
+        if (selectedArea && areaSelect) {
+          areaSelect.value = selectedArea;
+        }
+      });
+    });
+
+    // 5. Acordeón de Preguntas Frecuentes
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+    faqTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        const isOpen = !content.classList.contains('hidden');
+
+        // Cerrar los demás
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+        document.querySelectorAll('.faq-trigger').forEach(t => t.setAttribute('aria-expanded', 'false'));
+
+        if (!isOpen) {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 6. Validación y confirmación del Formulario de Contacto
+    const contactForm = document.getElementById('contact-form');
+    const formError = document.getElementById('form-error');
+    const formErrorText = document.getElementById('form-error-text');
+    const formSuccess = document.getElementById('form-success');
+    const resetFormBtn = document.getElementById('reset-form-btn');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formError.classList.add('hidden');
+
+      const nombre = document.getElementById('nombre').value.trim();
+      const correo = document.getElementById('correo').value.trim();
+      const area = document.getElementById('area').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const habeasData = document.getElementById('habeas-data').checked;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!nombre || !correo || !area || !mensaje) {
+        formErrorText.textContent = 'Por favor complete su nombre, correo, área de consulta y descripción del caso.';
+        formError.classList.remove('hidden');
+        return;
+      }
+
+      if (!emailRegex.test(correo)) {
+        formErrorText.textContent = 'Por favor ingrese un correo electrónico válido.';
+        formError.classList.remove('hidden');
+        return;
+      }
+
+      if (!habeasData) {
+        formErrorText.textContent = 'Debe autorizar el tratamiento de datos personales (Ley 1581 de 2012) para continuar.';
+        formError.classList.remove('hidden');
+        return;
+      }
+
+      // Mostrar confirmación
+      document.getElementById('confirm-name').textContent = nombre;
+      document.getElementById('confirm-area').textContent = area;
+      contactForm.classList.add('hidden');
+      formSuccess.classList.remove('hidden');
+    });
+
+    resetFormBtn.addEventListener('click', () => {
+      contactForm.reset();
+      formSuccess.classList.add('hidden');
+      contactForm.classList.remove('hidden');
+    });
+
+    // 7. Modal de Documentos Legales
+    const legalModal = document.getElementById('legal-modal');
+    const legalModalTitle = document.getElementById('legal-modal-title');
+    const legalModalBody = document.getElementById('legal-modal-body');
+
+    const legalTexts = {
+      aviso: {
+        title: 'Aviso Legal y Alcance Informativo',
+        body: `<p><strong>Carácter demostrativo:</strong> Este sitio web corresponde a un proyecto de demostración diseñado para portafolio profesional bajo el nombre ilustrativo <em>Vanguardia Legal &amp; Asociados</em>.</p>
+               <p>El contenido publicado tiene fines exclusivamente informativos y no constituye concepto jurídico vinculante ni reemplaza una consulta profesional formal.</p>`
+      },
+      datos: {
+        title: 'Política de Tratamiento de Datos (Ley 1581 de 2012)',
+        body: `<p>En cumplimiento de la <strong>Ley Estatutaria 1581 de 2012</strong> y el Decreto 1377 de 2013 de la República de Colombia, los datos suministrados en un entorno operativo serían tratados únicamente para atender solicitudes de orientación jurídica y contacto.</p>
+               <p>En esta versión de demostración para portafolio, los datos ingresados en el formulario se procesan de manera local en su navegador y no se almacenan en bases de datos externas.</p>`
+      },
+      privacidad: {
+        title: 'Política de Privacidad y Confidencialidad',
+        body: `<p>La información compartida preliminarmente a través de canales de contacto se maneja bajo criterios de reserva profesional. No obstante, el envío de una consulta inicial no genera por sí solo vínculo contractual de representación judicial o asesoría permanente hasta suscribir el respectivo acuerdo de servicios.</p>`
+      }
+    };
+
+    document.querySelectorAll('.legal-modal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-legal');
+        if (legalTexts[key]) {
+          legalModalTitle.textContent = legalTexts[key].title;
+          legalModalBody.innerHTML = legalTexts[key].body;
+          legalModal.classList.remove('hidden');
+          legalModal.classList.add('flex');
+        }
+      });
+    });
+
+    ['close-legal-modal', 'confirm-legal-modal'].forEach(id => {
+      document.getElementById(id).addEventListener('click', () => {
+        legalModal.classList.add('hidden');
+        legalModal.classList.remove('flex');
+      });
+    });
+
+    legalModal.addEventListener('click', (e) => {
+      if (e.target === legalModal) {
+        legalModal.classList.add('hidden');
+        legalModal.classList.remove('flex');
+      }
+    });
+  </script>
+</body>
+</html>
